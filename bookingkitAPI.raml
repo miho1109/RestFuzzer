@@ -1,0 +1,415 @@
+#%RAML 0.8
+title: bookingkit api
+version: v3.5.12
+baseUri: https://api.bookingkit.de/v3
+mediaType: application/json
+protocols: [HTTPS]
+documentation:
+  - title: Introduction into the API
+    content: |
+      # REST API
+      The bookingkit API is designed as RESTful API, all data is returned in JSON format so it can easily be used in all environments.
+      For more information regarding RESTful APIs please visit [wikipedia.com](http://en.wikipedia.org/wiki/Representational_state_transfer)
+
+      # Basic Request structure
+      ### Building the URL's
+      The current version of the API is v3 so all requests will be send to
+      ```
+      https://api.bookingkit.de/v3/
+      ```
+      The to request a resource collection append the name of that collection to the URL like so
+      ```
+      https://api.bookingkit.de/v3/events/
+      ```
+      A complete list of the available resources is listed below. To load a single item use it's id as in this example:
+      ```
+      https://api.bookingkit.de/v3/events/0cc175b9c0f1b6a831c399e269772661/
+      ```
+      Related resources may also be requested
+      ```
+      https://api.bookingkit.de/v3/events/0cc175b9c0f1b6a831c399e269772661/dates/
+      ```
+      ### Filtering the results
+      Resource collections may and should be filtered to fit individual needs. A complete list of query parameters can be found for each request. The order of the query parameters is not important and all are optional so only the ones that are needed must be send.
+      ```
+      https://api.bookingkit.de/v3/dates/?start_date=2016-01-01T10:00:00Z&limit=10
+      ```
+
+      # Oauth Authentication
+      Every request to the API requires a valid Token. Tokens can be requested from https://api.bookingkit.de/oauth/token with the provided client_id , client_secret and grant_type. You can use the provided testing tool here to test your API calls. Example of token request (PHP):
+      ```
+      $curl = curl_init('https://api.bookingkit.de/oauth/token');
+      curl_setopt($curl, CURLOPT_POST, true);
+      curl_setopt(
+          $curl,
+          CURLOPT_POSTFIELDS,
+          [
+              'client_id' => 'demo',
+              'client_secret' => 'demo',
+              'grant_type' => 'client_credentials',
+          ]
+      );
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+      $result = curl_exec($curl);
+      ```
+      In case of success you'll recive a json response with your access_token. Example of response:
+      ```
+      {"access_token":"134e8b2683a0e3b27dbb9420062b62eaf1d66f02","expires_in":3600,"token_type":"Bearer","scope":"calendar_read"}
+      ```
+      Now you can make requests to other API endpoints with authorization token in header (PHP):
+      ```
+      $curl = curl_init('https://api.bookingkit.de/v3/events/');
+      curl_setopt(
+          $curl,
+          CURLOPT_HTTPHEADER,
+          ['Authorization: Bearer 134e8b2683a0e3b27dbb9420062b62eaf1d66f02']
+      );
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+      $result = curl_exec($curl);
+      ```
+      When the token expires, request a new one.
+
+      # Overriding HTTP method
+      Clients that cannot send PATCH or DELETE requests may also send a POST request and append the query paramenter "method" to override the HTTP request type. Only the values "PATCH" and "DELETE" are accepted
+
+      # Support
+      If you have any questions on implementing our API or you would like to request access to the API contact our customer support at [service@bookingkit.de](mailto:service@bookingkit.de)
+
+  - title: Advanced usage
+    content: |
+      # Pagination
+
+
+      ## Best Practice
+      We encourage you to use an open end Pagination, meaning that the pagination does not have the information on which the last page is but rather will only communicate if there is a "next page". For this purpose every collection request will have Link Headers providing a link to the "next page", "previous page" and first page.
+      This is by far the better method of creating a pagination of the bookingkit resources and a lot faster then the standard way. For more information on link headers read: [W3.org on weblinks](http://www.w3.org/TR/html401/struct/links.html#h-12.1.2), [RFC5988 specification](https://tools.ietf.org/html/rfc5988)
+      The link headers contain automatic pagination as long as a page size was set through the *limit* query parameter
+
+      ## Slow version
+      **We do not encourage you to use this method unless absolutely necessary and only for collections with a low count.**
+      Collection requests support the optional query parameter *with_count* is set to true the response will also contain a "X-Total_Count" header informing you of the total count of the filtered collection ignoring of course limit and offset. Also a link Header with relation last will be send.
+      As you can imagine this renders the requests unnecessarily slow.
+
+      ## Important note
+      The bookingkit API has an absolute maximum limit set to 10.000 entries, setting a limit higher that this has no effect at all. Also using *with_count* for a collection that returns 100.000 items has no effect as the X-Total_Count header will always be 100.000.
+      Use the automated pagination solution described above for such large collections.
+
+
+      # Performance
+      Performance of the API is a constant concern, we encourage you to use the provided **fields** query paramenter to only request data that you need. Also use limits whenever appliable if you only need a limited amount of results.
+      As mentioned above try to avoid unnecessary **with_count** requests
+
+      All Responses are gzipped
+
+securitySchemes:
+  - oauth_2_0: !include securitySchemes/oauth_2.yaml
+
+securedBy: [oauth_2_0]
+
+schemas:
+  - vendor: !include schemas/vendor.json
+  - vendor_patch: !include schemas/vendor_patch.json
+  - vendors: !include schemas/vendors.json
+  - event: !include schemas/event.json
+  - event_patch: !include schemas/event_patch.json
+  - events: !include schemas/events.json
+  - merged_events: !include schemas/merged_events.json
+  - merged_event: !include schemas/merged_event.json
+  - prices: !include schemas/prices.json
+  - date: !include schemas/date.json
+  - merged_date: !include schemas/date.json
+  - date_patch: !include schemas/date_patch.json
+  - dates: !include schemas/dates.json
+  - merged_dates: !include schemas/dates.json
+  - eventDates: !include schemas/eventDates.json
+  - datesBatch: !include schemas/datesBatch.json
+  - datesBatch_patch: !include schemas/datesBatch_patch.json
+  - order: !include schemas/order.json
+  - order_patch: !include schemas/order_patch.json
+  - orders: !include schemas/orders.json
+  - categories: !include schemas/categories.json
+  - category: !include schemas/category.json
+  - error: !include schemas/error.json
+  - batch_response: !include schemas/batch_response.json
+  - products: !include schemas/products.json
+  - product: !include schemas/product.json
+  - users: !include schemas/users.json
+  - user: !include schemas/user.json
+  - product_patch: !include schemas/product_patch.json
+  - payment: !include schemas/payments.json
+  - payments: !include schemas/payments.json
+  - payments_post: !include schemas/payment_post.json
+  - ticket: !include schemas/ticket.json
+  - tickets: !include schemas/tickets.json
+  - participant_ticket: !include schemas/participant.json
+  - participant_tickets: !include schemas/participants.json
+
+resourceTypes:
+  - collection: !include resourceTypes/collection.yaml
+  - date-sorted-collection: !include resourceTypes/date-sorted-collection.yaml
+  - item: !include resourceTypes/item.yaml
+  - abstract-item: !include resourceTypes/abstract-item.yaml
+
+traits:
+  - eventsCollection: !include traits/eventsCollection.yaml
+  - eventDatePricesCollection: !include traits/eventDatePricesCollection.yaml
+  - vendorsCollection: !include traits/vendorsCollection.yaml
+  - datesCollection: !include traits/datesCollection.yaml
+  - dateCollection: !include traits/dateCollection.yaml
+  - eventDatesCollection: !include traits/eventDatesCollection.yaml
+  - ordersCollection: !include traits/ordersCollection.yaml
+  - categoriesCollection: !include traits/categoriesCollection.yaml
+  - underConstruction: !include traits/underConstruction.yaml
+  - filterableCollection: !include traits/filterableCollection.yaml
+  - createRequest: !include traits/createRequest.yaml
+  - deleteRequest: !include traits/deleteRequest.yaml
+  - patchRequest: !include traits/patchRequest.yaml
+  - productsCollection: !include traits/productsCollection.yaml
+  - ticketsCollection: !include traits/ticketsCollection.yaml
+
+/vendors:
+  displayName: Vendor
+  description: Vendors are companies or persons who offer bookable activities on bookingkit.de
+  type: collection
+  get:
+    is: [filterableCollection, vendorsCollection]
+
+  /{id}:
+    type: item
+
+    /events:
+      type: collection
+      description: Event collection for the given vendor
+      get:
+        is: [filterableCollection, eventsCollection]
+      post:
+        is: [createRequest]
+
+    /dates:
+      type: collection
+      description: Dates collection for the given vendor
+      get:
+        is: [filterableCollection, eventsCollection]
+      post:
+        is: [createRequest]
+
+    /eventDates:
+      type: collection
+      description: EventDates collection for the given vendor
+      get:
+        is: [filterableCollection, datesCollection]
+        description: |
+          Get a list of eventDates in array form
+          since api console does not yet support schema relations view eventDate schema for details
+          **Attention:**
+          due to the large amount of date inherit to this request it defaults to de minimum
+          amount of fileds, please request the fields you need specificaly
+
+    /orders:
+      type: collection
+      description: Orders collection for the given vendor
+      get:
+        is: [filterableCollection, ordersCollection]
+      post:
+        is: [createRequest]
+
+/products:
+  displayName: Products
+  description: Products are available in addition to the order on bookingkit.de
+  type: collection
+  get:
+    is: [filterableCollection, productsCollection]
+  post:
+    is: [createRequest]
+
+  /{id}:
+    type: item
+    patch:
+      is: [patchRequest]
+    delete:
+      is: [deleteRequest]
+
+/events:
+  displayName: Events
+  description: Events are activities, they refer to the event in general and not to a date, bookable items are dates
+  type: collection
+  get:
+    is: [filterableCollection, eventsCollection]
+  post:
+    is: [createRequest]
+
+  /{id}:
+    type: item
+    patch:
+      is: [patchRequest]
+    delete:
+      is: [underConstruction, deleteRequest]
+
+
+    /dates:
+      type: collection
+      description: Date collection for the given event
+      get:
+        is: [filterableCollection, datesCollection]
+      post:
+        is: [createRequest]
+
+/merged_events:
+  displayName: Merged Events
+  description: Events are activities, they refer to the event in general and not to a date, bookable items are dates
+  type: collection
+  get:
+    is: [filterableCollection, eventsCollection]
+
+  /{id}:
+    type: abstract-item
+    description: |
+       Merged event endpoint
+    get:
+        is: []
+
+/dates:
+  displayName: Dates
+  description: |
+    Dates are the actual bookable items, they are occurrences of events
+    this is a fast and slim request ideal for creating a calendar for example
+  type: date-sorted-collection
+  get:
+    is: [filterableCollection, datesCollection]
+  post:
+    is: [createRequest]
+
+  /{id}:
+    type: item
+    get:
+      is: [dateCollection]
+    patch:
+      is: [patchRequest]
+    delete:
+      is: [underConstruction,deleteRequest]
+
+/merged_dates:
+  displayName: Merged Dates
+  description: |
+    Merged Dates
+  type: date-sorted-collection
+  get:
+    is: [filterableCollection, datesCollection]
+
+  /{id}:
+    type: abstract-item
+    /prices:
+      type: collection
+      description: Prices of the given event date
+      get:
+        is: [eventDatePricesCollection]
+
+/datesBatch:
+  displayName: DatesBatch
+  description: |
+    Dates are the actual bookable items, they are occurrences of events
+    this is a fast and slim request ideal for creating a calendar for example
+  post:
+    is: [createRequest]
+    responses:
+      201:
+        body:
+          schema: batch_response
+  patch:
+    is: [patchRequest]
+    responses:
+      200:
+        body:
+          schema: batch_response
+
+/eventDates:
+  displayName: EventDates
+  description: |
+    combined resource
+    delivers an object containing 2 arrays, one of type dates and one of type events
+    this is a much slower request and delivers a lot of data only use if displaying date lists with event details
+  type: collection
+  get:
+    is: [filterableCollection, datesCollection]
+    description: |
+      Get a list of eventDates in array form
+      since api console does not yet support schema relations view eventDate schema for details
+      **Attention:**
+      due to the large amount of date inherit to this request it defaults to de minimum
+      amount of fileds, please request the fields you need specificaly
+
+/orders:
+  description: |
+    Orders MUST contain at least one ticket or voucher
+  get:
+    is: [filterableCollection, ordersCollection]
+  post:
+    is: [createRequest]
+/orders/{id}:
+    type: item
+    patch:
+      is: [patchRequest]
+/orders/{id}/payments:
+    type: collection
+    description: |
+       payments of an order
+    get:
+        is: []
+    post:
+        is: [createRequest]
+
+/orders/{id}/tickets:
+    type: collection
+    description: |
+       tickets of an order
+    get:
+        is: [ticketsCollection]
+/orders/{id}/tickets/{ticket_id}:
+    type: abstract-item
+    description: |
+       a ticket of an order
+    get:
+        is: []
+
+/orders/{id}/tickets/{ticket_id}/participant_tickets:
+    type: collection
+    description: |
+       participant tickets of a ticket
+    get:
+        is: [ticketsCollection]
+
+/orders/{id}/tickets/{ticket_id}/participant_tickets/{participant_ticket_id}:
+    type: abstract-item
+    description: |
+       a participant ticket
+    get:
+        is: []
+
+/participant_tickets:
+    type: collection
+    description: |
+       participant tickets of a ticket
+    get:
+        is: [ticketsCollection]
+
+/categories:
+  displayName: Categories
+  description: the bookingkit category tree
+  type: collection
+  get:
+    is: [filterableCollection, categoriesCollection]
+    description: |
+        Get all events categories
+  /{id}:
+    type: item
+
+/users:
+  displayName: Users
+  description: user list
+  type: collection
+  get:
+    is: [filterableCollection]
+    description: |
+        Get all users
+  /{id}:
+    type: item

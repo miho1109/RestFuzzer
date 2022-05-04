@@ -1,0 +1,376 @@
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/staticfiles/robots-txt-indexes/{robots_txt}
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/h1JvDv4/7tpDIOS/B6Wsc5c/staticfiles/robots-txt-indexes/PeHLCfk}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datasets
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/8F2gSTM/uJGrsEs/yaVVNml/urls/datasets?=new}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/reVUUNL/kpkgKUr/gDHeRFW}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/collections
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/hqqcWnN/XTCSi9t/collections}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/light
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/analyses/nafg2nQ/HfQ8zFX/light?=79}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/aYkd9bT/k0dMKYR/I9TugA7}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/vnKau62?=JCoH45w}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/links/percentiles
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/WRgMZQP/bwD3PzC/hCtCjVy/features/links/percentiles}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /users/{username}/projects
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=403, message=, url=https://api.botify.com/v1/users/9EFx2gD/projects}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/html/{url}
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/AcAwCNK/4Kjnp7X/zbEpkVD/urls/html/RluiNCf}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/UUgY3aT/aY9tMbl/0anG9iy/urls/datamodel}
+-------------------------------------
+METHOD: POST
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls
+QUERY: 
+ STRING,
+BODY: 
+{
+fields: [
+ STRING,
+],
+filters STRING,
+sort: [
+ STRING,
+],
+},
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/Z2s03Z5/peYh8sG/talCTwX/urls}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/subdomains
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/pJFbi4c/m7Tofn5/WFbsGYN/features/top_domains/subdomains}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/collections
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/lZbjvj3/9v8Edb0/collections}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /users/{username}/datasources_summary_by_projects
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=403, message=, url=https://api.botify.com/v1/users/6fVEIs1/datasources_summary_by_projects}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/filters/{identifier}
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/on2bvL6/dRTS03D/filters/Tubcudr}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/staticfiles/robots-txt-indexes
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/dW7OT9R/VWfwPXE/tNDTxVH/staticfiles/robots-txt-indexes}
+-------------------------------------
+METHOD: POST
+ENDPOINT: /jobs
+QUERY: EMPTY
+BODY: 
+{
+job_id STRING,
+job_type STRING,
+job_url STRING,
+job_status STRING,
+payload STRING,
+results STRING,
+date_created STRING,
+user STRING,
+metadata STRING,
+},
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/jobs}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/EBwpDRO/7KprFt0/kLiypMw}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/staticfiles/robots-txt-indexes
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/5RtW1qj/vNS6tsq/sVKkyiB/staticfiles/robots-txt-indexes?=80}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/export
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/5dZjxK1/EBxv2nA/2P686hn/urls/export?=73}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/analyses/4Vy645q/017vcTc}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/collections
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/dHFvVvL/l0ubIuR/collections}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/search_console/stats
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/2XqV8X6/iDX0gOA/vlaWuEC/features/search_console/stats}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /users/{username}/projects
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=403, message=, url=https://api.botify.com/v1/users/Aqza4dD/projects}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/36MAbnV/4MecRmk/tEHiliR/crawl_statistics/time}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datasets
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/p5GbG7k/RFOnPAG/IHpv87j/urls/datasets}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/collections/{collection}
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/3SDVF1K/Jozz0t7/collections/05jxqlh?=MaGOfhB}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/collections
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/o8yWOOC/IQL7S4D/collections}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/EAPsc5x/Bw8VBt2/49InM0F/features/sitemaps/samples/out_of_config?=91}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/kzt4Yk1/dWKlzsD/4mTndBw/urls/datamodel}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/staticfiles/robots-txt-indexes/{robots_txt}
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/JGcX1Kq/XBdIzYo/NYGMhfW/staticfiles/robots-txt-indexes/1tUdLfO}
+-------------------------------------
+METHOD: POST
+ENDPOINT: /projects/{username}/{project_slug}/urls/aggs
+QUERY: 
+ STRING,
+BODY: 
+: [
+{
+filters STRING,
+aggs: [
+ STRING,
+],
+},
+],
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/U06JkzT/xuhuBhr/urls/aggs}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/AuMaakO/9G7Rtbe/qXfMeN0/crawl_statistics}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/PMJs905/TXHvsqg/W0Mm8tk/features/sitemaps/samples/out_of_config}
+-------------------------------------
+METHOD: POST
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls
+QUERY: 
+ STRING,
+BODY: 
+{
+fields: [
+ STRING,
+],
+filters STRING,
+sort: [
+ STRING,
+],
+},
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/8iospZc/qbb96XL/URf5xw9/urls}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/xYICzZo/BLQr13l/ZND4S1a/features/sitemaps/samples/out_of_config?=0}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/scoring/summary
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/nGdgDaN/NRCSnN3/hfClPW6/features/scoring/summary}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/search_console/stats
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/SwAMONf/wvRuu4V/6EyoV6a/features/search_console/stats}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /users/{username}/projects
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=403, message=, url=https://api.botify.com/v1/users/9QqNFAB/projects}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/visits/orphan_urls/{medium}/{source}
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/T4KJeH0/AXte4AN/kRrVdSE/features/visits/orphan_urls/9nhBIUE/ExNd76V?=1}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/filters/{identifier}
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/nwIvpaE/nrVBt1b/filters/6QzUvYD}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/staticfiles/robots-txt-indexes/{robots_txt}
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/a0Yktf9/j5OuRiA/b9JzejW/staticfiles/robots-txt-indexes/fbcEHmB?=72}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/DVKf9cC/Q5E9ajK/M1ptME5/urls/datamodel?=disappeared}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/report
+QUERY: EMPTY
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/lOvPZYj/xYblIU5/XD5Itxo/features/sitemaps/report}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/SzHetFV/xBFZeTq/evdJKFi/urls/datamodel}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/domains
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/K9b5tvC/zQQYf3A/3hahpwg/features/top_domains/domains}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/urls/datamodel
+QUERY: 
+ STRING,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/IF9PmiF/gmQXwVH/cEZctry/urls/datamodel}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /projects/{username}/{project_slug}/account_filters
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/projects/UiE7sMc/EQmyRDl/account_filters}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/light
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=401, message=, url=https://api.botify.com/v1/analyses/esvDxWj/iZ6WLoo/light}
+-------------------------------------
+METHOD: GET
+ENDPOINT: /analyses/{username}/{project_slug}/{analysis_slug}/features/visits/orphan_urls/{medium}/{source}
+QUERY: 
+ INT,
+BODY: EMPTY
+Response{protocol=h2, code=500, message=, url=https://api.botify.com/v1/analyses/yB2ylS0/J2jsPKC/q3HVvoV/features/visits/orphan_urls/9w3xP83/gD2zone?=12}

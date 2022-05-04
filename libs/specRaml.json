@@ -1,0 +1,629 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Digital Delta Eco Extensions - Discovery",
+    "version": "0.9.5"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic"
+    },
+    "oidc": {
+      "type": "oauth2",
+      "scopes": {}
+    }
+  },
+  "paths": {
+    "/eco/endpoints": {
+      "get": {
+        "operationId": "GET_eco-endpoints",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/compartments": {
+      "get": {
+        "operationId": "GET_eco-compartments",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/compartments/expand": {
+      "get": {
+        "operationId": "GET_eco-compartments-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/compartments/filters": {
+      "get": {
+        "operationId": "GET_eco-compartments-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/literature": {
+      "get": {
+        "operationId": "GET_eco-literature",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/literature/filters": {
+      "get": {
+        "operationId": "GET_eco-literature-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/organisations": {
+      "get": {
+        "operationId": "GET_eco-organisations",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/organisations/expand": {
+      "get": {
+        "operationId": "GET_eco-organisations-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/organisations/filters": {
+      "get": {
+        "operationId": "GET_eco-organisations-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parameters": {
+      "get": {
+        "operationId": "GET_eco-parameters",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parameters/expand": {
+      "get": {
+        "operationId": "GET_eco-parameters-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parameters/filters": {
+      "get": {
+        "operationId": "GET_eco-parameters-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/quantities": {
+      "get": {
+        "operationId": "GET_eco-quantities",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/quantities/expand": {
+      "get": {
+        "operationId": "GET_eco-quantities-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/quantities/filters": {
+      "get": {
+        "operationId": "GET_eco-quantities-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/units": {
+      "get": {
+        "operationId": "GET_eco-units",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/units/filters": {
+      "get": {
+        "operationId": "GET_eco-units-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/measurementpackages": {
+      "get": {
+        "operationId": "GET_eco-measurementpackages",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/measurementpackages/expand": {
+      "get": {
+        "operationId": "GET_eco-measurementpackages-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/measurementpackages/filters": {
+      "get": {
+        "operationId": "GET_eco-measurementpackages-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/exchangesystems": {
+      "get": {
+        "operationId": "GET_eco-exchangesystems",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/exchangesystems/filters": {
+      "get": {
+        "operationId": "GET_eco-exchangesystems-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/institutes": {
+      "get": {
+        "operationId": "GET_eco-institutes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/institutes/filters": {
+      "get": {
+        "operationId": "GET_eco-institutes-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parameterpackages": {
+      "get": {
+        "operationId": "GET_eco-parameterpackages",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parameterpackages/expand": {
+      "get": {
+        "operationId": "GET_eco-parameterpackages-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parameterpackages/filters": {
+      "get": {
+        "operationId": "GET_eco-parameterpackages-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parametertypes": {
+      "get": {
+        "operationId": "GET_eco-parametertypes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/parametertypes/filters": {
+      "get": {
+        "operationId": "GET_eco-parametertypes-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/taxongroups": {
+      "get": {
+        "operationId": "GET_eco-taxongroups",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/taxongroups/filters": {
+      "get": {
+        "operationId": "GET_eco-taxongroups-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/taxontypes": {
+      "get": {
+        "operationId": "GET_eco-taxontypes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/taxontypes/filters": {
+      "get": {
+        "operationId": "GET_eco-taxontypes-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/standards": {
+      "get": {
+        "operationId": "GET_eco-standards",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/standards/filters": {
+      "get": {
+        "operationId": "GET_eco-standards-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/measurementobjects": {
+      "get": {
+        "operationId": "GET_eco-measurementobjects",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/measurementobjects/geojson": {
+      "get": {
+        "operationId": "GET_eco-measurementobjects-geojson",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/measurementobjects/geojsonfile": {
+      "get": {
+        "operationId": "GET_eco-measurementobjects-geojsonfile",
+        "responses": {
+          "200": {
+            "description": "Download GeoJSON response",
+            "headers": {
+              "Content-type": {
+                "description": "GeoJSON",
+                "type": "string",
+                "displayName": "Content-type"
+              }
+            },
+            "schema": {
+              "type": "file"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "type": "string",
+            "in": "query",
+            "name": "fileName"
+          }
+        ],
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/measurementobjects/expand": {
+      "get": {
+        "operationId": "GET_eco-measurementobjects-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/measurementobjects/filters": {
+      "get": {
+        "operationId": "GET_eco-measurementobjects-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/methods": {
+      "get": {
+        "operationId": "GET_eco-methods",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/methods/expand": {
+      "get": {
+        "operationId": "GET_eco-methods-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/methods/filters": {
+      "get": {
+        "operationId": "GET_eco-methods-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/monitoringnetworks": {
+      "get": {
+        "operationId": "GET_eco-monitoringnetworks",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/monitoringnetworks/expand": {
+      "get": {
+        "operationId": "GET_eco-monitoringnetworks-expand",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/monitoringnetworks/filters": {
+      "get": {
+        "operationId": "GET_eco-monitoringnetworks-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/notes": {
+      "get": {
+        "operationId": "GET_eco-notes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/notes/filters": {
+      "get": {
+        "operationId": "GET_eco-notes-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/purposes": {
+      "get": {
+        "operationId": "GET_eco-purposes",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/purposes/filters": {
+      "get": {
+        "operationId": "GET_eco-purposes-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    },
+    "/eco/projects": {
+      "get": {
+        "operationId": "GET_eco-projects",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/eco/projects/filters": {
+      "get": {
+        "operationId": "GET_eco-projects-filters",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oidc": []
+          }
+        ]
+      }
+    }
+  }
+}

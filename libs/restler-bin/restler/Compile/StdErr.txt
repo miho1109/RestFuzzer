@@ -1,0 +1,38 @@
+Unhandled exception. System.AggregateException: One or more errors occurred. (Unexpected token while deserializing object: EndObject. Path 'paths['/v1/AuthTokens/Promote'].x-twilio', line 1, position 4853.)
+ ---> Newtonsoft.Json.JsonSerializationException: Unexpected token while deserializing object: EndObject. Path 'paths['/v1/AuthTokens/Promote'].x-twilio', line 1, position 4853.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.Serialization.JsonSerializerProxy.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader)
+   at NSwag.OpenApiPathItem.OpenApiPathItemConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Populate(JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerProxy.PopulateInternal(JsonReader reader, Object target)
+   at Newtonsoft.Json.JsonSerializer.Populate(JsonReader reader, Object target)
+   at NJsonSchema.ExtensionDataDeserializationConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at NJsonSchema.Infrastructure.JsonSchemaSerialization.FromJson[T](String json, IContractResolver contractResolver)
+   at NJsonSchema.Infrastructure.JsonSchemaSerialization.FromJsonAsync[T](String json, SchemaType schemaType, String documentPath, Func`2 referenceResolverFactory, IContractResolver contractResolver)
+   at NSwag.OpenApiDocument.FromJsonAsync(String data, String documentPath, SchemaType expectedSchemaType, Func`2 referenceResolverFactory)
+   at NSwag.OpenApiDocument.FromFileAsync(String filePath)
+   --- End of inner exception stack trace ---
+   at Microsoft.FSharp.Control.AsyncResult`1.Commit() in F:\workspace\_work\1\s\src\fsharp\FSharp.Core\async.fs:line 349
+   at Microsoft.FSharp.Control.AsyncPrimitives.RunSynchronouslyInCurrentThread[a](CancellationToken cancellationToken, FSharpAsync`1 computation) in F:\workspace\_work\1\s\src\fsharp\FSharp.Core\async.fs:line 882
+   at Microsoft.FSharp.Control.AsyncPrimitives.RunSynchronously[T](CancellationToken cancellationToken, FSharpAsync`1 computation, FSharpOption`1 timeout) in F:\workspace\_work\1\s\src\fsharp\FSharp.Core\async.fs:line 890
+   at Microsoft.FSharp.Control.FSharpAsync.RunSynchronously[T](FSharpAsync`1 computation, FSharpOption`1 timeout, FSharpOption`1 cancellationToken) in F:\workspace\_work\1\s\src\fsharp\FSharp.Core\async.fs:line 1154
+   at Restler.Workflow.swaggerDocs@90-1.Invoke(String fp) in D:\My Desktop\restler-fuzzer\src\compiler\Restler.Compiler\Workflow.fs:line 90
+   at Microsoft.FSharp.Primitives.Basics.List.map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 x) in F:\workspace\_work\1\s\src\fsharp\FSharp.Core\local.fs:line 248
+   at Microsoft.FSharp.Collections.ListModule.Map[T,TResult](FSharpFunc`2 mapping, FSharpList`1 list) in F:\workspace\_work\1\s\src\fsharp\FSharp.Core\list.fs:line 75
+   at Restler.Workflow.generateGrammarFromSwagger(String grammarOutputDirectoryPath, FSharpOption`1 swaggerDoc, FSharpOption`1 specMetadata, Config config) in D:\My Desktop\restler-fuzzer\src\compiler\Restler.Compiler\Workflow.fs:line 89
+   at Restler.Workflow.generateRestlerGrammar(FSharpOption`1 swaggerDoc, Config config) in D:\My Desktop\restler-fuzzer\src\compiler\Restler.Compiler\Workflow.fs:line 270
+   at Program.main(String[] argv) in D:\My Desktop\restler-fuzzer\src\compiler\Restler.CompilerExe\Program.fs:line 37

@@ -1,0 +1,14 @@
+Restler Information: 0 : Starting task Compile...
+    DateTime=2022-02-12T09:55:29.1379196Z
+Restler Information: 0 : Launching 'dotnet "D:\My Desktop\API Testing\Restler\restler-bin\restler\../compiler/Restler.CompilerExe.dll" "D:\My Desktop\API Testing\Restler\restler-bin\restler\Compile\config.json"'
+    DateTime=2022-02-12T09:55:29.3696248Z
+Restler Information: 0 : Process execution terminated in 00:00:01.3769994 with exit code 0xE0434352: 'dotnet "D:\My Desktop\API Testing\Restler\restler-bin\restler\../compiler/Restler.CompilerExe.dll" "D:\My Desktop\API Testing\Restler\restler-bin\restler\Compile\config.json"'
+    DateTime=2022-02-12T09:55:30.7554456Z
+Restler Information: 0 : (972) dotnet "D:\My Desktop\API Testing\Restler\restler-bin\restler\../compiler/Restler.CompilerExe.dll" "D:\My Desktop\API Testing\Restler\restler-bin\restler\Compile\config.json" exited with code: -532462766
+    DateTime=2022-02-12T09:55:30.7609915Z
+Restler Error: 0 : Compiler failed. See logs in D:\My Desktop\API Testing\Restler\restler-bin\restler\Compile directory for more information. 
+    DateTime=2022-02-12T09:55:30.7692543Z
+Restler Information: 0 : Task Compile failed.
+    DateTime=2022-02-12T09:55:30.7729795Z
+Restler Information: 0 : Collecting logs...
+    DateTime=2022-02-12T09:55:30.7781800Z
