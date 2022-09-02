@@ -46,7 +46,7 @@ public class SpecFileHandler {
         t.join();
     }
     
-    public void convertRamlToOAS(String filePath) throws InterruptedException, IOException {
+    public void convertRamlToOAS(String filePath) throws InterruptedException {
         Thread t = new Thread(() -> {
             try {
                 Process process = new ProcessBuilder("libs\\ramltooas.exe", filePath).start();

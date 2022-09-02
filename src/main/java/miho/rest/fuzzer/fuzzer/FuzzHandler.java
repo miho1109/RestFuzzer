@@ -42,8 +42,8 @@ public class FuzzHandler {
                 public void run() {
                     i--;
 //                    System.out.println(i);
-//                    uniqueRandWalk();
-                    randWalk();
+                    uniqueRandWalk();
+//                    randWalk();
                     //                    RestFuzzerUtil.printRequestSeq(sequenceSet);
                     if (i < 0) {
                         timer.cancel();
@@ -79,7 +79,6 @@ public class FuzzHandler {
         }
         RestFuzzerUtil.writeToFile("errList", errList.toString());
         Evaluator.getInstance().printStatistics();
-        uniqueRandWalk();
     }
 
     private void uniqueRandWalk() {
@@ -132,7 +131,7 @@ public class FuzzHandler {
     
         if (reqSeq != null && reqSeq.size() > 0) {
             for (MyRequest req : reqSeq) {
-                if (httpHandler.makeRequest(req, responseSet)) return false;
+                if (!httpHandler.makeRequest(req, responseSet)) return false;
             }
         }
         return true;
